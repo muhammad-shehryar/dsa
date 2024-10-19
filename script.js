@@ -37,5 +37,26 @@ function findMax(arr){
     return {min,max}
 }
 
-let result = findMax(arr2)
-console.log(`${result.min} and ${result.max}`)
+let { min, max } = findMax(arr2);
+console.log(`Minimum: ${min}, Maximum: ${max}`);
+
+//moveZeroesToEnd
+let arr3=[10,0,20,40,-100,50,0,0,0];
+
+function moveNonZeroToEnd(arr){
+    let nonZeroIndex = 0 ;
+    for(let i = 0;i<arr.length;i++){
+        if(arr[i] !== 0){
+            arr[nonZeroIndex] = arr[i]
+            nonZeroIndex++
+        }
+       
+    }
+    while(nonZeroIndex < arr.length){
+        arr[nonZeroIndex] = 0
+        nonZeroIndex++
+    }
+    return arr;
+}
+
+console.log(moveNonZeroToEnd(arr3))
