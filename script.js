@@ -181,3 +181,50 @@ function secondLargest(){
     }
     return second === -Infinity?null:second
 }
+
+
+//linked list
+
+
+function addNodeAtEnd(head,newData){
+
+    let newNode = {data:newData,next:null};
+
+    if(head === null){
+        return newNode;
+    }
+    let currentNode = head;
+    while(currentNode.next !== null){
+        currentNode = currentNode.next;
+    }
+    currentNode = newNode;
+    return head;
+}
+// Usage
+let head = { data: 10, next: null }; // Linked list ka shuruat
+
+head = addNodeAtEnd(head, 20); // 20 ko add karte hain
+head = addNodeAtEnd(head, 30); // 30 ko add karte hain
+head = addNodeAtEnd(head, "shaheryar"); // 30 ko add karte hain
+head = addNodeAtEnd(head, "sajjad"); // 30 ko add karte hain
+console.log(head)
+
+function removeNode(head,key){
+    if(head === null){
+        return null
+    }
+    if(head.data === key){
+        return head.next;
+    }
+    let currentNode = head;
+    while (currentNode.next !== null){
+        if(currentNode.next.data === key){
+            currentNode.next = currentNode.next.next
+            return head;
+        }
+        currentNode = currentNode.next;
+    }
+    return head;
+}
+
+
