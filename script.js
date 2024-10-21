@@ -227,4 +227,28 @@ function removeNode(head,key){
     return head;
 }
 
+function printNode(head){
+    let currentNode = head;
+    while(currentNode !== null){
+        console.log(currentNode.data)
+        currentNode = currentNode.next;
+    }
+}
+
+//Linked List ki Length Dhoondna
+
+let head1 = {data:10,next:{data:20,next:{data:30,next:{data:40,next:null}}}}
+
+function findLength(){
+    let count = 0;
+    let currentNode = head;
+    while(currentNode !== null){
+        count ++
+        currentNode = currentNode.next;
+    }
+    return count
+}
+
+let length=findLength(head1)
+console.log(`length of linked list is ${length}`)
 
