@@ -252,3 +252,5 @@ function findLength(){
 let length=findLength(head1)
 console.log(`length of linked list is ${length}`)
 
+
+
